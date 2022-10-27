@@ -13,9 +13,15 @@ repositories {
     mavenLocal()
     maven {
         url = uri("https://jitpack.io")
-        url = uri("https://repo.extendedclip.com/content/repositories/placeholderapi/")
+    }
+    maven {
         url = uri("https://repo.maven.apache.org/maven2/")
+    }
+    maven {
         url = uri("https://repo.papermc.io/repository/maven-public/")
+    }
+    maven {
+        url = uri("https://repo.extendedclip.com/content/repositories/placeholderapi/")
     }
 }
 
@@ -23,10 +29,11 @@ dependencies {
     implementation("org.bstats:bstats-bukkit:2.2.1")
     implementation("mysql:mysql-connector-java:5.1.49")
     implementation("com.zaxxer:HikariCP:4.0.3")
-    compileOnly("com.github.MilkBowl:VaultAPI:1.7.0")
-    compileOnly("me.clip:placeholderapi:2.10.0")
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
+    compileOnly("me.clip:placeholderapi:2.11.2")
     compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
     compileOnly(fileTree("lib"))
+
 
 }
 
