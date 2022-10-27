@@ -1,0 +1,144 @@
+PLUGIN_NAME: "&8[&3&lGeekCodePlus&8] &f"
+NOT_PERM: "&c你没有权限执行这个指令!"
+HELP:
+  - '&3&lGeekCodePlus &8- &7&l帮助导航'
+  - '&b&l/geekc&3 help &8- &7显示帮助'
+  - '&b&l/geekc&3 cdk 【CDK】 &8- &7兑换CDK，各模块通用'
+  - '&b&l/geekc&3 inv buy &8- &7购买玩家邀请码'
+  - '&b&l/geekc&3 inv get &8- &7获取邀请码拥有者没领取的奖励'
+  - '&b&l/geekc&3 share put &8- &7上传手中物品，并生成分享码'
+  - '&b&l/geekc&3 share list &8- &7查看自己所有未被使用的分享码'
+  - '&c&l管理员命令'
+  - '§3§l/geekc create §f[§7COMMAND§f] §f[§7amount§f] §f[§7perm§f] §8- §7生成激活码'
+  - '&b&l/geekc&3 reload &8- &7重新载入配置'
+USER_CDK_HELP:
+  - '&3&lGeekCodePlus &8- &7&l帮助导航'
+  - '&b&l/geekc&3 cdk 【CDK】 &8- &7兑换CDK，各模块通用'
+
+Module:
+  #邀请码语言配置
+  InviteCode:
+    NOT_MONEY: |-
+      &1
+      &7&l  GeekCodePlus &8>&7>&f>
+      &1
+      &C&l    你没有足够的金币!
+      &1
+    NOT_REWARD: |-
+      &1
+      &7&l  GeekCodePlus &8>&7>&f>
+      &1
+      &7&l    你没有待领取的奖励！"
+      &1
+    INVITE_HELP: |-
+      &1
+      &7&l  GeekCodePlus &8>&7>&f>
+      &b&l    /geekc inv buy &8- &7购买玩家邀请码
+      &b&l    /geekc inv get &8- &7获取邀请码拥有者没领取的奖励
+      &1
+    ME_CODE: |-
+      &1
+      &7&l  GeekCodePlus &8>&7>&f>
+      &e&l    你的邀请码是&7: &F [cdk]
+      &1
+    BUY_CDK: |-
+      &1
+      &7&l  GeekCodePlus &8>&7>&f>
+      &e&l    你的CDK购买成功，赶快分享出去吧!
+      &e&l    邀请码§7: &F [cdk]
+      &1
+    OWNER_REWARD_OUT: |-
+      &3&
+      &7&l  GeekCodePlus &8>&7>&f>
+      &b&l    你的邀请码奖励已发放！
+      &1
+    USER_REWARD_OUT: |-
+      &3
+      &7&l  GeekCodePlus &8>&7>&f>
+      &a&l    兑换成功，邀请码所有者&8:&F [owner_name] &A邀请码&8:&7 [cdk]
+      &1
+
+    CODE_INVALID: |-
+      &1
+      &7&l  GeekCodePlus &8>&7>&f>
+      &c&l    无效的邀请码，请重新输入！'
+      &1
+    THIS_CODE_USED: |-
+      &b
+      &7&l  GeekCodePlus &8>&7>&f>
+      &7&l    你不能再继续使用这邀请码了！
+      &1
+    NOT_THIS_CODE: |-
+      &b
+      &7&l  GeekCodePlus &8>&7>&f>
+      &c&l    邀请码不存在！
+      &b
+    NOT_USER_YOU_CODE: |-
+      &b
+      &7&l  GeekCodePlus &8>&7>&f>
+      &c&l    你不能兑换自己的邀请码！
+      &b
+ #激活码语言配置
+  ActivationCode:
+    CODE_INVALID_2: |-
+      &b
+      &7&l  GeekCodePlus &8>&7>&f>
+      §c&l    激活码格式错误，请重新输入！
+      &b
+    NOT_THIS_CODE_2: |-
+      &b
+      &7&l  GeekCodePlus &8>&7>&f>
+      &c&l    激活码不存在，请重新输入！
+      &c
+    NOT_PERM_USER: |-
+      &b
+      &7&l  GeekCodePlus &8>&7>&f>
+      &c&l    你没有权限兑换这个激活码！
+      &b
+    CODE_LIMIT: |-
+      &b
+      &7&l  GeekCodePlus &8>&7>&f>
+      &c&l    这个激活码已达到使用上限！
+      &b
+    THIS_CODE_USED_2: |-
+      &b
+      &7&l  GeekCodePlus &8>&7>&f>
+      &c&l    你已经兑换过这个激活码！
+      &b
+    CODE_REWARD_OUT: |-
+      &b
+      &7&l  GeekCodePlus &8>&7>&f>
+      &a&l    兑换码奖励已发放，请查收！
+      &b
+  #分享码语言配置
+  ShareCode:
+    Code_Put: |-
+      &A
+      &7&l  GeekCodePlus &8>&7>&f>
+      &a  你成功生成分享码，点击下方按钮复制
+      &A
+    Code_Get: |-
+      &A
+      &7&l  GeekCodePlus &8>&7>&f>
+      &c  这个分享码已经使用过了
+      &A
+    ISMAIN: |-
+      &A
+      &7&l  GeekCodePlus &8>&7>&f>
+      &c  请手持物品再输入指令！
+      &A
+    MECODE: |-
+      &A
+      &7&l  GeekCodePlus &8>&7>&f>
+      &6  以下是你所有未使用的分享码！
+    MECODE_NULL: |-
+      &A
+      &7&l  GeekCodePlus &8>&7>&f>
+      &e  你没有生成任何分享码！
+      &A
+    MECODE_UPDATA: |-
+      &A
+      &7&l  GeekCodePlus &8>&7>&f>
+      &e  没有你的数据...
+      &e  你可以等待几秒后重新查询！
+      &A

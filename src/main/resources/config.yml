@@ -1,0 +1,71 @@
+#本配置文件，除数据库设置以为均动态更新，无需重载！
+checkUpdate: true
+data_storage:
+  use: sqlite
+  mysql:
+    host: '127.0.0.1'
+    port: 3306
+    database: 'GeekInvite'
+    username: 'root'
+    password: '123456'
+    params: '?autoReconnect=true&useSSL=false'
+  sqlite:
+  hikari_settings:
+    maximum_pool_size: 10
+    minimum_idle: 5
+    maximum_lifetime: 1800000
+    keepalive_time: 0
+    connection_timeout: 5000
+    idle_timeout: 60000
+
+#模块设置
+Module:
+  #邀请码模块
+  #设置为 false 禁用模块
+  #禁用后 不会创建该模块的数据库表
+  InviteCode:
+    Use: true
+    #购买玩家邀请码的花费
+    Buy_Cdk_Money: 3000
+    #是否限制新玩家只可领取一次邀请码奖励，设置为 true 新玩家领取过任意一个邀请码后，则无法继续领取其它人的邀请码
+    Limit_usage: true
+    Reward_settings:
+      #CDK拥有者的奖励-可能发放有问题
+      #当玩家使用 [ /geeki get ] 时执行的指令
+      owner_reward:
+        - 'money give [player_name] 1000'
+      #CDK使用者的奖励
+      #当玩家成功兑换邀请码，执行的指令
+      user_reward:
+        - 'money give [player_name] 100'
+        - 'points give [player_name] 100'
+  #激活码模块
+  #设置为 false 禁用模块
+  ActivationCode:
+    Use: true
+
+    #分享码模块
+  ShareCode:
+    Use: true
+    #分享码长度
+    length: 10
+    #gui设置
+    GUI_NAME: "&0提货界面"
+    Buttons:
+      ICON_OK:
+        Material: MINECART
+        Name: "&a提取物品"
+      ICON_CAN:
+        Material: BARRIER
+        Name: "&c取消"
+      ICON_MAIN:
+        lore:
+          - ''
+          - '&7&l------------'
+          - '&7物品来自: &f[owner]'
+          - '&7创建时间: &f[time]'
+          - '&7使用状态: &f[status]'
+          - ''
+
+
+
