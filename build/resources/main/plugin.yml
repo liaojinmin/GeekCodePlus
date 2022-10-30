@@ -1,0 +1,11 @@
+name: GeekCodePlus
+version: '${version}'
+main: me.GeekCodePlus.GeekCodeMain
+author: HSDlao_liao
+website: 'https://www.geekcraft.ink/'
+depend: [PlaceholderAPI,Vault]
+api-version: 1.13
+commands:
+  geekc:
+    description: 插件主命令
+    aliases: [ gkc ]
