@@ -82,7 +82,7 @@ public final class ShareActionManage {
         }
         if (A != null) {
             ItemMeta out = A.getItemMeta();
-            if (out.getLore() != null) {
+            if (out.hasLore()) {
                 List<String> lore = out.getLore();
                 lore.addAll(replace(ConfigManage.ICON_MAIN_LORE, data.getUPLOAD_PLAYNAME(), data.getUPLOAD_TIME(), data.getUSE_STATUS()));
                 out.setLore(lore);

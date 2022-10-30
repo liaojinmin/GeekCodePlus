@@ -28,7 +28,7 @@ public class Share_DataManage {
      * @param use_status 使用状态 （未使用）（已使用）
      */
     public static void insert(String server_name, String item_stack, String item_name, int amount, String code, String upload_playname, String use_status) {
-        java.util.Date d = new java.util.Date();
+        Date date = new Date();
         SimpleDateFormat si = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try (Connection c = DataBaseManage.getConnection()) {
             try (PreparedStatement s = c.prepareStatement("INSERT INTO geek_share_data(`server_name`,`item_stack`,`item_name`,`item_amount`,`code`,`upload_playname`,`use_status`) VALUES(?,?,?,?,?,?,?);")) {
@@ -40,7 +40,7 @@ public class Share_DataManage {
                 s.setString(6, upload_playname);
                 s.setString(7, use_status);
                 s.execute();
-                getCodeMap.put(code, new ShareObj(server_name, item_stack, item_name, amount, code, si.format(d), upload_playname, use_status, "null", "null"));
+                getCodeMap.put(code, new ShareObj(server_name, item_stack, item_name, amount, code, si.format(date), upload_playname, use_status, "null", "null"));
             }
         } catch (SQLException e) {
             GeekCodeMain.say("§c数据储存发生错误-Share-insert");

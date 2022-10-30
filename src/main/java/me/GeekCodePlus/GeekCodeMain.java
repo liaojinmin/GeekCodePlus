@@ -54,7 +54,7 @@ public class GeekCodeMain extends JavaPlugin {
         motd(" \\______  /\\___  >\\___  >__|_ \\\\______  /\\____/\\____ |\\___  >____|   |____/____//____  >");
         motd("        \\/     \\/     \\/     \\/       \\/            \\/    \\/                         \\/");
         motd("");
-        motd("     §aGeekCodePlus §bv" + Version + " §7by §awww.geekcraft.ink");
+        motd("     §aGeekCodePlus §bVersion:" + Version + " §7by §awww.geekcraft.ink");
         motd("     §8适用于Bukkit: §71.7.10-1.18.2 §8当前: §7" + Bukkit.getName());
         motd("");
 

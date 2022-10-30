@@ -12,7 +12,7 @@ import java.util.List;
 
 public final class LibrariesManage {
 
-    final String httpUrl = "https://plugins-libs-1301331373.cos.ap-hongkong.myqcloud.com/perm/";
+    final String httpUrl = "https://web-1301331373.cos.ap-guangzhou.myqcloud.com/";
     final File LibrariesPath = new File(System.getProperty("user.dir"),"GeekLibs");
     final File HikariCP = new File(LibrariesPath, "HikariCP-4.0.3-Revise.jar");
 

@@ -48,7 +48,7 @@ public class Invite_DataManage {
     public static void setUserAndOwner(Player player, String cdk, String Owner_name, String Owner_uuid, int Owner_count, int Owner_reward, String ip, int in) {
         String uuid = String.valueOf(Objects.requireNonNull(player.getPlayer()).getUniqueId());
         String name = player.getName();
-        int index =  (Invite_DataManage.getUserMap.size()+1);
+        int index = (Invite_DataManage.getUserMap.size() + 1);
         try (Connection connection = DataBaseManage.getConnection()) {
             try (PreparedStatement sa = connection.prepareStatement("INSERT INTO geek_invite_user_data(`user_name`,`user_uuid`,`user_cdk`,`user_ip`) VALUES(?,?,?,?);");
                  PreparedStatement sb = connection.prepareStatement("UPDATE `geek_invite_data` SET `owner_count`=?, `owner_reward`=? WHERE owner_name=?;")) {
@@ -83,7 +83,7 @@ public class Invite_DataManage {
                     player.sendMessage(out);
                 }
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -141,7 +141,7 @@ public class Invite_DataManage {
                         }
                     }
                 } catch (SQLException e) {
-                   GeekCodeMain.say("&c邀请码-使用者数据转储失败");
+                    GeekCodeMain.say("&c邀请码-使用者数据转储失败");
                     e.printStackTrace();
                 }
             }
@@ -157,10 +157,11 @@ public class Invite_DataManage {
 
         /**
          * 这是邀请码拥有者的缓存数据构造函数
-         * @param name 玩家名称
-         * @param uuid 玩家uuid
-         * @param cdk cdk
-         * @param count 被使用次数
+         *
+         * @param name   玩家名称
+         * @param uuid   玩家uuid
+         * @param cdk    cdk
+         * @param count  被使用次数
          * @param reward 剩余的奖励次数
          */
         public InviteOwnerObj(String name, String uuid, String cdk, int count, int reward) {
@@ -200,10 +201,11 @@ public class Invite_DataManage {
 
         /**
          * 这是邀请码使用者的缓存数据构造函数
+         *
          * @param name 邀请码使用者的名称
          * @param uuid 邀请码使用者的uuid
-         * @param cdk 邀请码使用者，使用的 cdk
-         * @param ip 邀请码使用者的 ip
+         * @param cdk  邀请码使用者，使用的 cdk
+         * @param ip   邀请码使用者的 ip
          */
         public InviteUserObj(String name, String uuid, String cdk, String ip) {
             this.USER_NAME = name;

@@ -1,6 +1,6 @@
 package me.GeekCodePlus.Libraries.data.SQLite;
 
-import com.zaxxer.hikari.HikariDataSource;
+import com.GeekLib.perm.zaxxer.hikari.HikariDataSource;
 import me.GeekCodePlus.Configure.ConfigManage;
 import me.GeekCodePlus.GeekCodeMain;
 import me.GeekCodePlus.Libraries.data.DataHead;
@@ -66,7 +66,7 @@ public class SQLite extends DataHead {
 
     @Override
     public void load() {
-        final String SqliteUrl = "jdbc:sqlite:"+ ConfigManage.getDataFolder()+"/Geek-Data.db";
+        final String SqliteUrl = "jdbc:sqlite:" + ConfigManage.getDataFolder() + "/Geek-Data.db";
         SqliteDataSource = new HikariDataSource();
         SqliteDataSource.setDataSourceClassName("org.sqlite.SQLiteDataSource");
         SqliteDataSource.addDataSourceProperty("url", SqliteUrl);
@@ -78,20 +78,18 @@ public class SQLite extends DataHead {
         SqliteDataSource.setConnectionTimeout(ConfigManage.CONNECTION_TIMEOUT);
         SqliteDataSource.setIdleTimeout(ConfigManage.IDLE_TIMEOUT);
         SqliteDataSource.setPoolName("GeekCodePlus-SQLITE");
-       // create();
+        // create();
     }
 
     @Override
     public void createTables() {
+        String[] s = {SETUP_A, SETUP_B, SQL_CREATE_1, SQL_CREATE_2, SQL_CREATE_3, SQL_CREATE_4, SQL_CREATE_5};
         try (Connection connection = SqliteDataSource.getConnection()) {
             try (Statement statement = connection.createStatement()) {
-                statement.execute(SETUP_A);
-                statement.execute(SETUP_B);
-                statement.execute(SQL_CREATE_1);
-                statement.execute(SQL_CREATE_2);
-                statement.execute(SQL_CREATE_3);
-                statement.execute(SQL_CREATE_4);
-                statement.execute(SQL_CREATE_5);
+                for (String s1 : s) {
+                    statement.addBatch(s1);
+                }
+                statement.executeBatch();
             }
         } catch (SQLException e) {
             GeekCodeMain.say("§c 创建数据库表时出错，你使用了正确的版本吗?-InviteCode");

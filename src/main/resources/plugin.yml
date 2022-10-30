@@ -1,5 +1,5 @@
 name: GeekCodePlus
-version: ${project.version}
+version: '${version}'
 main: me.GeekCodePlus.GeekCodeMain
 author: HSDlao_liao
 website: 'https://www.geekcraft.ink/'

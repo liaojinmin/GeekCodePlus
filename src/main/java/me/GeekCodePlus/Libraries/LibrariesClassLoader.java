@@ -15,6 +15,7 @@ public final class LibrariesClassLoader {
 
     private MethodHandles.Lookup lookup;
     private Unsafe unsafe;
+
     public LibrariesClassLoader() {
         super();
     }
@@ -29,6 +30,7 @@ public final class LibrariesClassLoader {
             long lookupOffset = unsafe.staticFieldOffset(lookupField);
             lookup = (MethodHandles.Lookup) unsafe.getObject(lookupBase, lookupOffset);
         } catch (Throwable ignore) {
+            ignore.printStackTrace();
         }
     }
 

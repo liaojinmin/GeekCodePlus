@@ -8,10 +8,7 @@ import org.jetbrains.annotations.NotNull;
 public class CommandCore implements CommandExecutor {
 
 
-
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args)
-    {
-
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (args.length == 0 || args[0].equals("help")) {
             CommandHelp.execute(sender, command, label, args);
             return true;
@@ -31,6 +28,6 @@ public class CommandCore implements CommandExecutor {
         if (args[0].equalsIgnoreCase("share")) {
             CommandShare.execute(sender, command, label, args);
         }
-        return true;
+        return false;
     }
 }

@@ -78,8 +78,9 @@ public final class GuiClick {
                     HandlerList.unregisterAll(this);
                 }
             }
-        },GeekCodeMain.instance);
+        }, GeekCodeMain.instance);
     }
+
     private static void giveItem(Player player, String ItemKey) {
         ItemStack A = null;
         try {

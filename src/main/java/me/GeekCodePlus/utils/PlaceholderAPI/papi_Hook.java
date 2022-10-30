@@ -3,18 +3,20 @@ package me.GeekCodePlus.utils.PlaceholderAPI;
 import me.GeekCodePlus.GeekCodeMain;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 
 public class papi_Hook extends PlaceholderExpansion {
 
-    public papi_Hook(GeekCodeMain plugin) {
+    public papi_Hook(GeekCodeMain plugins) {
     }
 
     public String onPlaceholderRequest(Player p, String s) {
         String name = p.getName();
-        if (s.equalsIgnoreCase("i_owner_name")){
+        papiOwnerObj res;
+        if (s.equalsIgnoreCase("i_owner_name")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                papiOwnerObj res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(name);
                 if (res == null) {
                     return "null";
                 }
@@ -22,9 +24,9 @@ public class papi_Hook extends PlaceholderExpansion {
             }
             return "null";
         }
-        if (s.equalsIgnoreCase("i_owner_uuid")){
+        if (s.equalsIgnoreCase("i_owner_uuid")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                papiOwnerObj res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(name);
                 if (res == null) {
                     return "null";
                 }
@@ -32,9 +34,9 @@ public class papi_Hook extends PlaceholderExpansion {
             }
             return "null";
         }
-        if (s.equalsIgnoreCase("i_owner_cdk")){
+        if (s.equalsIgnoreCase("i_owner_cdk")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                papiOwnerObj res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(name);
                 if (res == null) {
                     return "null";
                 }
@@ -42,9 +44,9 @@ public class papi_Hook extends PlaceholderExpansion {
             }
             return "null";
         }
-        if (s.equalsIgnoreCase("i_owner_count")){
+        if (s.equalsIgnoreCase("i_owner_count")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                papiOwnerObj res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(name);
                 if (res == null) {
                     return "null";
                 }
@@ -52,9 +54,9 @@ public class papi_Hook extends PlaceholderExpansion {
             }
             return "null";
         }
-        if (s.equalsIgnoreCase("i_owner_reward")){
+        if (s.equalsIgnoreCase("i_owner_reward")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                papiOwnerObj res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(name);
                 if (res == null) {
                     return "null";
                 }
@@ -65,156 +67,294 @@ public class papi_Hook extends PlaceholderExpansion {
         /*
         注册邀请码排行榜
          */
-        if (s.equalsIgnoreCase("i_1_name")){
+        papiOwnerTopObj resHead;
+        switch (s) {
+            case "i_1_name":
+                resHead = papiDataHead.getInviteTop.get(1);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+            case "i_2_name":
+                resHead = papiDataHead.getInviteTop.get(2);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+            case "i_3_name":
+                resHead = papiDataHead.getInviteTop.get(3);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+            case "i_4_name":
+                resHead = papiDataHead.getInviteTop.get(4);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+            case "i_5_name":
+                resHead = papiDataHead.getInviteTop.get(5);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+            case "i_6_name":
+                resHead = papiDataHead.getInviteTop.get(6);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+            case "i_7_name":
+                resHead = papiDataHead.getInviteTop.get(7);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+            case "i_8_name":
+                resHead = papiDataHead.getInviteTop.get(8);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+            case "i_9_name":
+                resHead = papiDataHead.getInviteTop.get(9);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+            case "i_10_name":
+                resHead = papiDataHead.getInviteTop.get(10);
+                if (resHead == null) {
+                    return "null";
+                }
+                return resHead.O_NAME;
+        }
+        /*if (s.equalsIgnoreCase("i_1_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(1);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
         }
-        if (s.equalsIgnoreCase("i_2_name")){
+        if (s.equalsIgnoreCase("i_2_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(2);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
         }
-        if (s.equalsIgnoreCase("i_3_name")){
+        if (s.equalsIgnoreCase("i_3_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(3);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
         }
-        if (s.equalsIgnoreCase("i_4_name")){
+        if (s.equalsIgnoreCase("i_4_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(4);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
         }
-        if (s.equalsIgnoreCase("i_5_name")){
+        if (s.equalsIgnoreCase("i_5_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(5);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
         }
-        if (s.equalsIgnoreCase("i_6_name")){
+        if (s.equalsIgnoreCase("i_6_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(6);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
         }
-        if (s.equalsIgnoreCase("i_7_name")){
+        if (s.equalsIgnoreCase("i_7_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(7);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
         }
-        if (s.equalsIgnoreCase("i_8_name")){
+        if (s.equalsIgnoreCase("i_8_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(8);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
         }
-        if (s.equalsIgnoreCase("i_9_name")){
+        if (s.equalsIgnoreCase("i_9_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(9);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
         }
-        if (s.equalsIgnoreCase("i_10_name")){
+        if (s.equalsIgnoreCase("i_10_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(10);
             if (res == null) {
                 return "null";
             }
             return res.O_NAME;
-        }
+        }*/
         /*
         count
          */
-        if (s.equalsIgnoreCase("i_1_count")){
+        switch (s) {
+            case "i_1_count":
+                resHead = papiDataHead.getInviteTop.get(1);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+            case "i_2_count":
+                resHead = papiDataHead.getInviteTop.get(2);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+            case "i_3_count":
+                resHead = papiDataHead.getInviteTop.get(3);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+            case "i_4_count":
+                resHead = papiDataHead.getInviteTop.get(4);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+            case "i_5_count":
+                resHead = papiDataHead.getInviteTop.get(5);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+            case "i_6_count":
+                resHead = papiDataHead.getInviteTop.get(6);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+            case "i_7_count":
+                resHead = papiDataHead.getInviteTop.get(7);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+            case "i_8_count":
+                resHead = papiDataHead.getInviteTop.get(8);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+            case "i_9_count":
+                resHead = papiDataHead.getInviteTop.get(9);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+            case "i_10_count":
+                resHead = papiDataHead.getInviteTop.get(10);
+                if (resHead == null) {
+                    return "null";
+                }
+                return String.valueOf(resHead.O_COUNT);
+
+        }
+        /*
+        if (s.equalsIgnoreCase("i_1_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(1);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-        if (s.equalsIgnoreCase("i_2_count")){
+        if (s.equalsIgnoreCase("i_2_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(2);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-        if (s.equalsIgnoreCase("i_3_count")){
+        if (s.equalsIgnoreCase("i_3_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(3);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-        if (s.equalsIgnoreCase("i_4_count")){
+        if (s.equalsIgnoreCase("i_4_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(4);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-        if (s.equalsIgnoreCase("i_5_count")){
+        if (s.equalsIgnoreCase("i_5_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(5);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-        if (s.equalsIgnoreCase("i_6_count")){
+        if (s.equalsIgnoreCase("i_6_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(6);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-        if (s.equalsIgnoreCase("i_7_count")){
+        if (s.equalsIgnoreCase("i_7_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(7);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-        if (s.equalsIgnoreCase("i_8_count")){
+        if (s.equalsIgnoreCase("i_8_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(8);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-        if (s.equalsIgnoreCase("i_9_count")){
+        if (s.equalsIgnoreCase("i_9_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(9);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-        if (s.equalsIgnoreCase("i_10_count")){
+        if (s.equalsIgnoreCase("i_10_count")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(10);
             if (res == null) {
                 return "null";
             }
             return String.valueOf(res.O_COUNT);
         }
-
+*/
         return "null";
     }
 
 
-    public String getIdentifier() { return "geekc"; }
-    public String getAuthor() { return "GeekCraft"; }
-    public String getVersion() { return GeekCodeMain.Version; }
-    public boolean persist() { return true; }
+    public @NotNull String getIdentifier() {
+        return "geekc";
+    }
+
+    public @NotNull String getAuthor() {
+        return "GeekCraft";
+    }
+
+    public @NotNull String getVersion() {
+        return GeekCodeMain.Version;
+    }
+
+    public boolean persist() {
+        return true;
+    }
 }

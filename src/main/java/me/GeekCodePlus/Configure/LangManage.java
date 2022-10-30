@@ -2,7 +2,7 @@ package me.GeekCodePlus.Configure;
 
 import java.util.List;
 
-public class LangManage extends ConfigManage{
+public class LangManage extends ConfigManage {
 
     public static String PLUGIN_NAME;
     public static String NOT_PERM;
@@ -59,6 +59,6 @@ public class LangManage extends ConfigManage{
     //分享码不存在
     public static List<String> ME_CODE_NULL;
     //查询分享码
-    public static List<String> ME_CODE_UPDATA;
+    public static List<String> ME_CODE_UPDATE;
 
 }

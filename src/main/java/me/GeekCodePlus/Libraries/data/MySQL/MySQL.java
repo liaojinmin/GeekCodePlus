@@ -1,6 +1,6 @@
 package me.GeekCodePlus.Libraries.data.MySQL;
 
-import com.zaxxer.hikari.HikariDataSource;
+import com.GeekLib.perm.zaxxer.hikari.HikariDataSource;
 import me.GeekCodePlus.Configure.ConfigManage;
 import me.GeekCodePlus.GeekCodeMain;
 import me.GeekCodePlus.Libraries.LibrariesManage;
@@ -101,13 +101,13 @@ public final class MySQL extends DataHead {
 
     @Override
     public void createTables() {
+        String[] sqlArray = {SQL_CREATE_1, SQL_CREATE_2, SQL_CREATE_3, SQL_CREATE_4, SQL_CREATE_5};
         try (Connection connection = MysqlDataSource.getConnection()) {
             try (Statement statement = connection.createStatement()) {
-                    statement.execute(SQL_CREATE_1);
-                    statement.execute(SQL_CREATE_2);
-                    statement.execute(SQL_CREATE_3);
-                    statement.execute(SQL_CREATE_4);
-                    statement.execute(SQL_CREATE_5);
+                for (String sql : sqlArray) {
+                    statement.addBatch(sql);
+                }
+                statement.executeBatch();
             }
         } catch (SQLException e) {
             GeekCodeMain.say("§c创建数据库表时出错，你使用了正确的版本吗?-InviteCode");

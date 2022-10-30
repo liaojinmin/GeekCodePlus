@@ -6,6 +6,7 @@ import me.GeekCodePlus.Configure.LangManage;
 import me.GeekCodePlus.GeekCodeMain;
 import me.GeekCodePlus.Module.ShareCode.GuiClick;
 import me.GeekCodePlus.Module.ShareCode.Share_DataManage;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -14,10 +15,13 @@ public class CommandCdk {
 
 
     public static void execute(CommandSender sender, Command command, String label, String[] args) {
+        if (!(sender instanceof Player)) {
+            GeekCodeMain.say(ChatColor.RED+"必须以玩家身份执行指令");
+            return;
+        }
+
         Player player = (Player) sender;
         String player_name = player.getPlayer().getName();
-
-
         if (!sender.hasPermission("geekc.command.cdk")) {
             sender.sendMessage(LangManage.PLUGIN_NAME + LangManage.NOT_PERM);
             GeekCodeMain.say("&7玩家缺少权限 §cgeekc.command.cdk");
@@ -50,8 +54,7 @@ public class CommandCdk {
                 }
                 return;
             }
-            for(String list_to_string : LangManage.USER_CDK_HELP)
-            {
+            for (String list_to_string : LangManage.USER_CDK_HELP) {
                 sender.sendMessage(list_to_string);
             }
         }

@@ -16,6 +16,7 @@ public final class LoadConfig extends ConfigManage {
 
     public static void onLoad() {
         GeekCodeMain.say("§8加载配置管理器...");
+        long start = System.currentTimeMillis();
         GeekCodeMain.instance.saveDefaultConfig();
         yml = new File(getDataFolder(), "config.yml");
         CHECK_UPDATE = getConfig().getBoolean("checkUpdate", true);
@@ -58,6 +59,8 @@ public final class LoadConfig extends ConfigManage {
         ICON_CAN_MATERIAL = getConfig().getString(ModuleShare + ".Buttons.ICON_CAN.Material", "BARRIER");
         ICON_CAN_NAME = getStrings(ModuleShare + ".Buttons.ICON_CAN.Name");
         ICON_MAIN_LORE = getStringList(ModuleShare + ".Buttons.ICON_MAIN.lore");
+        long end = System.currentTimeMillis();
+        GeekCodeMain.say("配置已加载完成,耗时: "+ String.valueOf(end-start)+"ms");
     }
 
     /**
