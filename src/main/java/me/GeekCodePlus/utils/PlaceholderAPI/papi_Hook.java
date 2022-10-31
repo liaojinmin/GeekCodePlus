@@ -67,68 +67,27 @@ public class papi_Hook extends PlaceholderExpansion {
         /*
         注册邀请码排行榜
          */
-        papiOwnerTopObj resHead;
         switch (s) {
             case "i_1_name":
-                resHead = papiDataHead.getInviteTop.get(1);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(1);
             case "i_2_name":
-                resHead = papiDataHead.getInviteTop.get(2);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(2);
             case "i_3_name":
-                resHead = papiDataHead.getInviteTop.get(3);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(3);
             case "i_4_name":
-                resHead = papiDataHead.getInviteTop.get(4);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(4);
             case "i_5_name":
-                resHead = papiDataHead.getInviteTop.get(5);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(5);
             case "i_6_name":
-                resHead = papiDataHead.getInviteTop.get(6);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(6);
             case "i_7_name":
-                resHead = papiDataHead.getInviteTop.get(7);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(7);
             case "i_8_name":
-                resHead = papiDataHead.getInviteTop.get(8);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(8);
             case "i_9_name":
-                resHead = papiDataHead.getInviteTop.get(9);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(9);
             case "i_10_name":
-                resHead = papiDataHead.getInviteTop.get(10);
-                if (resHead == null) {
-                    return "null";
-                }
-                return resHead.O_NAME;
+                return getHeadName(10);
         }
         /*if (s.equalsIgnoreCase("i_1_name")) {
             papiOwnerTopObj res = papiDataHead.getInviteTop.get(1);
@@ -205,65 +164,25 @@ public class papi_Hook extends PlaceholderExpansion {
          */
         switch (s) {
             case "i_1_count":
-                resHead = papiDataHead.getInviteTop.get(1);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(1);
             case "i_2_count":
-                resHead = papiDataHead.getInviteTop.get(2);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(2);
             case "i_3_count":
-                resHead = papiDataHead.getInviteTop.get(3);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(3);
             case "i_4_count":
-                resHead = papiDataHead.getInviteTop.get(4);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(4);
             case "i_5_count":
-                resHead = papiDataHead.getInviteTop.get(5);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(5);
             case "i_6_count":
-                resHead = papiDataHead.getInviteTop.get(6);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(6);
             case "i_7_count":
-                resHead = papiDataHead.getInviteTop.get(7);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(7);
             case "i_8_count":
-                resHead = papiDataHead.getInviteTop.get(8);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(8);
             case "i_9_count":
-                resHead = papiDataHead.getInviteTop.get(9);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(9);
             case "i_10_count":
-                resHead = papiDataHead.getInviteTop.get(10);
-                if (resHead == null) {
-                    return "null";
-                }
-                return String.valueOf(resHead.O_COUNT);
+                return getHeadCount(10);
 
         }
         /*
@@ -341,6 +260,21 @@ public class papi_Hook extends PlaceholderExpansion {
         return "null";
     }
 
+    private String getHeadName(int i) {
+        papiOwnerTopObj resHead = papiDataHead.getInviteTop.get(i);
+        if (resHead == null) {
+            return "null";
+        }
+        return resHead.O_NAME;
+    }
+
+    private String getHeadCount(int i) {
+        papiOwnerTopObj resHead = papiDataHead.getInviteTop.get(i);
+        if (resHead == null) {
+            return "null";
+        }
+        return String.valueOf(resHead.O_COUNT);
+    }
 
     public @NotNull String getIdentifier() {
         return "geekc";

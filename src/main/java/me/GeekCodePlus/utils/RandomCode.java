@@ -16,17 +16,15 @@ public final class RandomCode {
             "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
 
     public String getRandomGeekA() {
-        String head = "GeekA";
-        String A = Random(4);
-        String B = Random(4);
-        String C = Random(4);
-        String D = Random(4);
-        return head + "-" + A + "-" + B + "-" + C + "-" + D;
+        String A = Randoms(4);
+        String B = Randoms(4);
+        String C = Randoms(4);
+        String D = Randoms(4);
+        return "GeekA-" + A + "-" + B + "-" + C + "-" + D;
     }
 
     public String getRandomGeekI() {
         int intnum = 5;
-        //
         Random rm = new Random();
         double number = (1 + rm.nextDouble()) * Math.pow(4, intnum);
         String random_out = RandomStringUtils.randomAlphanumeric(4);
@@ -39,7 +37,7 @@ public final class RandomCode {
         return "GeekS-" + RandomStringUtils.randomAlphanumeric(num);
     }
 
-    private String Random(int integer) {
+    private String Randoms(int integer) {
         Random r = new Random();
         List<String> aa_list = new ArrayList<>();
         for (int i = 0; integer > i; i++) {
