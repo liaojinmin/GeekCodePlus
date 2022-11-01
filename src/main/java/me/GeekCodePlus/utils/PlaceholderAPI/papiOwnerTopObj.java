@@ -12,12 +12,4 @@ public class papiOwnerTopObj {
         this.O_NAME = name;
         this.O_COUNT = count;
     }
-
-    public void setO_COUNT(int O_COUNT) {
-        this.O_COUNT = O_COUNT;
-    }
-
-    public void setO_NAME(String O_NAME) {
-        this.O_NAME = O_NAME;
-    }
 }

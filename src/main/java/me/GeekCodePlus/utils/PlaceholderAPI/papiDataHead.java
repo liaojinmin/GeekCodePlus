@@ -32,16 +32,11 @@ public class papiDataHead {
                         }
                         getInviteTop.clear();
                         int index = 1;
-                        String name = res.getString("owner_name");
-                        int count = res.getInt("owner_count");
-                        papiOwnerTopObj papiOwnerTopObj = new papiOwnerTopObj(name, count);
                         while (res.next()) {
-                            name = res.getString("owner_name");
-                            count = res.getInt("owner_count");
-                            papiOwnerTopObj.setO_NAME(name);
-                            papiOwnerTopObj.setO_COUNT(count);
-                            //papiOwnerTopObj a = new papiOwnerTopObj(name, count);
-                            getInviteTop.put(index, papiOwnerTopObj);
+                            String name = res.getString("owner_name");
+                            int count = res.getInt("owner_count");
+                            papiOwnerTopObj a = new papiOwnerTopObj(name, count);
+                            getInviteTop.put(index, a);
                             index++;
                         }
                     }
