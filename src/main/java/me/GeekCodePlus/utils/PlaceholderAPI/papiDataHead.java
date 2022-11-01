@@ -35,8 +35,8 @@ public class papiDataHead {
                         while (res.next()) {
                             String name = res.getString("owner_name");
                             int count = res.getInt("owner_count");
-                            papiOwnerTopObj a = new papiOwnerTopObj(name, count);
-                            getInviteTop.put(index, a);
+                            papiOwnerTopObj papiOwnerTopObj = new papiOwnerTopObj(name, count);
+                            getInviteTop.put(index, papiOwnerTopObj);
                             index++;
                         }
                     }
