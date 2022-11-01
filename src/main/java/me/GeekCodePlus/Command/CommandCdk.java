@@ -21,7 +21,7 @@ public class CommandCdk {
         }
 
         Player player = (Player) sender;
-        String player_name = player.getPlayer().getName();
+        String player_name = player.getName();
         if (!sender.hasPermission("geekc.command.cdk")) {
             sender.sendMessage(LangManage.PLUGIN_NAME + LangManage.NOT_PERM);
             GeekCodeMain.say("&7玩家缺少权限 §cgeekc.command.cdk");
