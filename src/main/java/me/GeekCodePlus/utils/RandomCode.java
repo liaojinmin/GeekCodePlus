@@ -14,7 +14,6 @@ public final class RandomCode {
 
     private final List<String> strArr = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
             "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
-
     public String getRandomGeekA() {
         String A = Randoms(4);
         String B = Randoms(4);
@@ -41,9 +40,9 @@ public final class RandomCode {
         Random r = new Random();
         List<String> aa_list = new ArrayList<>();
         for (int i = 0; integer > i; i++) {
-            String out = strArr.get(r.nextInt(26)).replace("[", "").replace("]", "");
+            String out = strArr.get(r.nextInt(26));
             aa_list.add(out);
         }
-        return Joiner.on("").join(aa_list).replace("[", "").replace("]", "");
+        return Joiner.on("").join(aa_list);
     }
 }
