@@ -23,12 +23,12 @@ public final class RandomCode {
     }
 
     public String getRandomGeekI() {
-        int intnum = 5;
+        int intNum = 5;
         Random rm = new Random();
-        double number = (1 + rm.nextDouble()) * Math.pow(4, intnum);
+        double number = (1 + rm.nextDouble()) * Math.pow(4, intNum);
         String random_out = RandomStringUtils.randomAlphanumeric(4);
         String random = RandomStringUtils.randomAlphanumeric(4);
-        return "GeekI-" + random + "-" + String.valueOf(number).substring(1, intnum + 1).replace(".", "") + "-" + random_out;
+        return "GeekI-" + random + "-" + String.valueOf(number).substring(1, intNum + 1).replace(".", "") + "-" + random_out;
     }
 
     public String getRandomGeekR() {

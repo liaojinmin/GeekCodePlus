@@ -4,8 +4,8 @@ package me.GeekCodePlus.Command;
 import me.GeekCodePlus.Configure.ConfigManage;
 import me.GeekCodePlus.Configure.LangManage;
 import me.GeekCodePlus.GeekCodeMain;
-import me.GeekCodePlus.Module.ShareCode.GuiClick;
-import me.GeekCodePlus.Module.ShareCode.Share_DataManage;
+import me.GeekCodePlus.Module.ActionCode.Share_GuiClick;
+import me.GeekCodePlus.Module.DataManage.Share_DataManage;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -16,7 +16,7 @@ public class CommandCdk {
 
     public static void execute(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            GeekCodeMain.say(ChatColor.RED+"必须以玩家身份执行指令");
+            GeekCodeMain.say(ChatColor.RED + "必须以玩家身份执行指令");
             return;
         }
 
@@ -50,7 +50,7 @@ public class CommandCdk {
                         player.sendMessage(out);
                     }
                 } else {
-                    GuiClick.open(player, args[1]);
+                    Share_GuiClick.open(player, args[1]);
                 }
                 return;
             }

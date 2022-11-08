@@ -39,13 +39,13 @@ public final class LoadLang extends LangManage {
         LangManage.NOT_THIS_CODE = getStringsList(ModuleInv + ".NOT_THIS_CODE");
         LangManage.NOT_USER_YOU_CODE = getStringsList(ModuleInv + ".NOT_USER_YOU_CODE");
         //激活码模块
-        String ModuleActi = "Module.ActivationCode.";
-        LangManage.CODE_INVALID_2 = getStringsList(ModuleActi + "CODE_INVALID_2");
-        LangManage.NOT_THIS_CODE_2 = getStringsList(ModuleActi + "NOT_THIS_CODE_2");
-        LangManage.NOT_PERM_USER = getStringsList(ModuleActi + "NOT_PERM_USER");
-        LangManage.CODE_LIMIT = getStringsList(ModuleActi + "CODE_LIMIT");
-        LangManage.THIS_CODE_USED_2 = getStringsList(ModuleActi + "THIS_CODE_USED_2");
-        LangManage.CODE_REWARD_OUT = getStringsList(ModuleActi + "CODE_REWARD_OUT");
+        String ModuleActivation = "Module.ActivationCode.";
+        LangManage.CODE_INVALID_2 = getStringsList(ModuleActivation + "CODE_INVALID_2");
+        LangManage.NOT_THIS_CODE_2 = getStringsList(ModuleActivation + "NOT_THIS_CODE_2");
+        LangManage.NOT_PERM_USER = getStringsList(ModuleActivation + "NOT_PERM_USER");
+        LangManage.CODE_LIMIT = getStringsList(ModuleActivation + "CODE_LIMIT");
+        LangManage.THIS_CODE_USED_2 = getStringsList(ModuleActivation + "THIS_CODE_USED_2");
+        LangManage.CODE_REWARD_OUT = getStringsList(ModuleActivation + "CODE_REWARD_OUT");
         //分享码模块
 
         String ModuleShare = "Module.ShareCode";
@@ -56,7 +56,7 @@ public final class LoadLang extends LangManage {
         LangManage.ME_CODE_NULL = getStringsList(ModuleShare + ".MECODE_NULL");
         LangManage.ME_CODE_UPDATE = getStringsList(ModuleShare + ".MECODE_UPDATA");
         long end = System.currentTimeMillis();
-        GeekCodeMain.say("语言已加载,耗时: " + String.valueOf(end - start) + "ms");
+        GeekCodeMain.say("语言已加载,耗时: " + (end - start) + "ms");
     }
 
 

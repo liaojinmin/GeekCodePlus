@@ -4,7 +4,7 @@ import com.google.common.base.Joiner;
 import me.GeekCodePlus.Configure.ConfigManage;
 import me.GeekCodePlus.Configure.LangManage;
 import me.GeekCodePlus.GeekCodeMain;
-import me.GeekCodePlus.Module.ShareCode.Share_DataManage;
+import me.GeekCodePlus.Module.DataManage.Share_DataManage;
 import me.GeekCodePlus.utils.StreamSerializer;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;

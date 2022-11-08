@@ -17,7 +17,7 @@ public class CommandInvite {
             return;
         }
         if (!ConfigManage.USER_INVITE_CODE) return;
-        Player p = (Player) sender;
+        Player player = (Player) sender;
         String uuid = String.valueOf(((Player) sender).getUniqueId());
         String name = sender.getName();
         if (args.length >= 2) {
@@ -27,12 +27,12 @@ public class CommandInvite {
                     GeekCodeMain.say("§c geekc.command.inv.buy");
                     return;
                 }
-                if (GeekCodeMain.econ.has(p, ConfigManage.BUY_CDK_MONEY)) {
-                    GeekCodeMain.inviteActionManage.BuyCdk(p, name, uuid);
+                if (GeekCodeMain.econ.has(player, ConfigManage.BUY_CDK_MONEY)) {
+                    GeekCodeMain.inviteActionManage.BuyCdk(player, name, uuid);
                     return;
                 }
                 for (String out : LangManage.NOT_MONEY) {
-                    p.sendMessage(out);
+                    player.sendMessage(out);
                 }
                 return;
             }
@@ -45,10 +45,10 @@ public class CommandInvite {
                     GeekCodeMain.say("§c geekc.command.inv.get");
                     return;
                 }
-                int r = GeekCodeMain.inviteActionManage.getOwner_Reward(name);
-                if (r >= 1) {
-                    GeekCodeMain.inviteActionManage.getRewardCheck(p);
-                } else if (r == 0) {
+                int reward = GeekCodeMain.inviteActionManage.getOwner_Reward(name);
+                if (reward >= 1) {
+                    GeekCodeMain.inviteActionManage.getRewardCheck(player);
+                } else if (reward == 0) {
                     for (String out : LangManage.NOT_REWARD) {
                         sender.sendMessage(out);
                     }

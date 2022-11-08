@@ -26,7 +26,7 @@ public class InviteCode implements Listener {
             String txt = LangManage.PLUGIN_NAME + " §a你有新的邀请码奖励待领取！";
             TextComponent text = new TextComponent(txt + "§7[§a§l一键领取§7]");
             text.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/gkc inv get"));
-            player.spigot().sendMessage(text);
+            player.sendMessage(text);
         }
     }
 

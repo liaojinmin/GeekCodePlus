@@ -2,12 +2,12 @@ package me.GeekCodePlus.Module;
 
 import me.GeekCodePlus.Configure.ConfigManage;
 import me.GeekCodePlus.GeekCodeMain;
-import me.GeekCodePlus.Module.ActivationCode.ActivationActionManage;
-import me.GeekCodePlus.Module.ActivationCode.Activation_DataManage;
-import me.GeekCodePlus.Module.InviteCode.InviteActionManage;
-import me.GeekCodePlus.Module.InviteCode.Invite_DataManage;
-import me.GeekCodePlus.Module.ShareCode.ShareActionManage;
-import me.GeekCodePlus.Module.ShareCode.Share_DataManage;
+import me.GeekCodePlus.Module.ActionCode.ActivationActionManage;
+import me.GeekCodePlus.Module.ActionCode.InviteActionManage;
+import me.GeekCodePlus.Module.ActionCode.ShareActionManage;
+import me.GeekCodePlus.Module.DataManage.Activation_DataManage;
+import me.GeekCodePlus.Module.DataManage.Invite_DataManage;
+import me.GeekCodePlus.Module.DataManage.Share_DataManage;
 import me.GeekCodePlus.utils.PlaceholderAPI.papiDataHead;
 
 public final class ModuleManage {

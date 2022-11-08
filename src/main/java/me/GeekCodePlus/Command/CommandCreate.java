@@ -22,8 +22,8 @@ public class CommandCreate {
              return;
          }
          if (args.length >= 4 && args[0].equalsIgnoreCase("create") && ConfigManage.USER_ACTIVATION_CODE) {
-             Player p = ((Player) sender).getPlayer();
-             GeekCodeMain.activationActionManage.SaveCode(p, args[1], Integer.parseInt(args[2]), args[3]);
+             Player player = ((Player) sender).getPlayer();
+             GeekCodeMain.activationActionManage.SaveCode(player, args[1], Integer.parseInt(args[2]), args[3]);
              return;
          }
          if (ConfigManage.USER_ACTIVATION_CODE) {
