@@ -4,6 +4,7 @@ import me.GeekCodePlus.Command.CommandCore;
 import me.GeekCodePlus.Configure.LoadConfig;
 import me.GeekCodePlus.Configure.LoadLang;
 import me.GeekCodePlus.Libraries.LibrariesClassLoader;
+import me.GeekCodePlus.Libraries.LibrariesManage;
 import me.GeekCodePlus.Libraries.data.DataBaseManage;
 import me.GeekCodePlus.Metrics.Metrics;
 import me.GeekCodePlus.Module.ActivationCode.ActivationActionManage;
@@ -59,7 +60,7 @@ public class GeekCodeMain extends JavaPlugin {
 
         LoadConfig.onLoad();
         LoadLang.onLoad();
-        //new LibrariesManage();
+        new LibrariesManage();
         new ModuleManage();
         randomCode = new RandomCode();
 

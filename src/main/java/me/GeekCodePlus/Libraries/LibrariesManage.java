@@ -21,12 +21,12 @@ public final class LibrariesManage {
             new DataBaseManage();
             return;
         }
-        if (!LibrariesPath.exists()) LibrariesPath.mkdirs();
-        if (!HikariCP.exists() || HikariCP.length() <= 100) {
-            HikariCP.delete();
-            GeekCodeMain.say("§e依赖库不存在，开始自动下载.");
-            Download("HikariCP-4.0.3-Revise.jar");
-        }
+//        if (!LibrariesPath.exists()) LibrariesPath.mkdirs();
+//        if (!HikariCP.exists() || HikariCP.length() <= 100) {
+//            HikariCP.delete();
+//            GeekCodeMain.say("§e依赖库不存在，开始自动下载.");
+//            Download("HikariCP-4.0.3-Revise.jar");
+//        }
         loadJarPath(LibrariesPath);
         new DataBaseManage();
     }
