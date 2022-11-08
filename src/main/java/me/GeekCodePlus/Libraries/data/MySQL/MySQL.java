@@ -1,6 +1,6 @@
 package me.GeekCodePlus.Libraries.data.MySQL;
 
-import com.GeekLib.perm.zaxxer.hikari.HikariDataSource;
+import com.zaxxer.hikari.HikariDataSource;
 import me.GeekCodePlus.Configure.ConfigManage;
 import me.GeekCodePlus.GeekCodeMain;
 import me.GeekCodePlus.Libraries.LibrariesManage;

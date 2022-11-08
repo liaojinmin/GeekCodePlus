@@ -14,6 +14,22 @@ public final class LoadConfig extends ConfigManage {
 
     private static File yml;
 
+    /**
+     * @return 获取配置文件目录
+     */
+    public static FileConfiguration getConfig() {
+        return YamlConfiguration.loadConfiguration(yml);
+    }
+
+    private static String getStrings(@NotNull String s) {
+        return getConfig().getString(s).replace("&", "§");
+    }
+
+
+    private static List<String> getStringList(@NotNull String s) {
+        return Arrays.asList(Joiner.on(",").join(getConfig().getStringList(s)).replace("&", "§").split(","));
+    }
+
     public static void onLoad() {
         GeekCodeMain.say("§8加载配置管理器...");
         long start = System.currentTimeMillis();
@@ -61,21 +77,5 @@ public final class LoadConfig extends ConfigManage {
         ICON_MAIN_LORE = getStringList(ModuleShare + ".Buttons.ICON_MAIN.lore");
         long end = System.currentTimeMillis();
         GeekCodeMain.say("配置已加载完成,耗时: "+ String.valueOf(end-start)+"ms");
-    }
-
-    /**
-     * @return 获取配置文件目录
-     */
-    public static FileConfiguration getConfig() {
-        return YamlConfiguration.loadConfiguration(yml);
-    }
-
-    private static String getStrings(@NotNull String s) {
-        return getConfig().getString(s).replace("&", "§");
-    }
-
-
-    private static List<String> getStringList(@NotNull String s) {
-        return Arrays.asList(Joiner.on(",").join(getConfig().getStringList(s)).replace("&", "§").split(","));
     }
 }
