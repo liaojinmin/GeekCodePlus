@@ -15,11 +15,11 @@ public class papi_Hook extends PlaceholderExpansion {
     }
 
     public String onPlaceholderRequest(Player p, String s) {
-        String name = p.getName();
+        String player = p.getName();
         papiOwnerObj res;
         if (s.equalsIgnoreCase("i_owner_name")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(player);
                 if (res == null) {
                     return "null";
                 }
@@ -29,7 +29,7 @@ public class papi_Hook extends PlaceholderExpansion {
         }
         if (s.equalsIgnoreCase("i_owner_uuid")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(player);
                 if (res == null) {
                     return "null";
                 }
@@ -39,7 +39,7 @@ public class papi_Hook extends PlaceholderExpansion {
         }
         if (s.equalsIgnoreCase("i_owner_cdk")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(player);
                 if (res == null) {
                     return "null";
                 }
@@ -49,7 +49,7 @@ public class papi_Hook extends PlaceholderExpansion {
         }
         if (s.equalsIgnoreCase("i_owner_count")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(player);
                 if (res == null) {
                     return "null";
                 }
@@ -59,7 +59,7 @@ public class papi_Hook extends PlaceholderExpansion {
         }
         if (s.equalsIgnoreCase("i_owner_reward")) {
             if (!papiDataHead.getOwnerData.isEmpty()) {
-                res = papiDataHead.getOwnerData.get(name);
+                res = papiDataHead.getOwnerData.get(player);
                 if (res == null) {
                     return "null";
                 }

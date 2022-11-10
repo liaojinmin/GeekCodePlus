@@ -127,16 +127,16 @@ public class Share_DataManage {
     }
 
     public static class ShareObj {
-        private String SERVER_NAME;
-        private String ITEM_STACK;
-        private String ITEM_NAME;
-        private int ITEM_AMOUNT;
-        private String CODE;
-        private String UPLOAD_TIME;
-        private String UPLOAD_PLAYNAME;
-        private String USE_STATUS;
-        private String USE_PLAYNAME;
-        private String USE_TIME;
+        private final String SERVER_NAME;
+        private final String ITEM_STACK;
+        private final String ITEM_NAME;
+        private final int ITEM_AMOUNT;
+        private final String CODE;
+        private final String UPLOAD_TIME;
+        private final String UPLOAD_PLAYNAME;
+        private final String USE_STATUS;
+        private final String USE_PLAYNAME;
+        private final String USE_TIME;
 
         public ShareObj(String SERVER_NAME, String ITEM_STACK, String ITEM_NAME, int ITEM_AMOUNT, String CODE, String UPLOAD_TIME, String UPLOAD_PLAYNAME, String USE_STATUS, String USE_PLAYNAME, String USE_TIME) {
             this.SERVER_NAME = SERVER_NAME;

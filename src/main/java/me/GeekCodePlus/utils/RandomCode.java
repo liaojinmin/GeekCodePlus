@@ -15,10 +15,10 @@ public final class RandomCode {
     private final List<String> strArr = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
             "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
     public String getRandomGeekA() {
-        String A = Randoms(4);
-        String B = Randoms(4);
-        String C = Randoms(4);
-        String D = Randoms(4);
+        String A = Randoms();
+        String B = Randoms();
+        String C = Randoms();
+        String D = Randoms();
         return "GeekA-" + A + "-" + B + "-" + C + "-" + D;
     }
 
@@ -36,10 +36,10 @@ public final class RandomCode {
         return "GeekS-" + RandomStringUtils.randomAlphanumeric(num);
     }
 
-    private String Randoms(int integer) {
+    private String Randoms() {
         Random r = new Random();
         List<String> aa_list = new ArrayList<>();
-        for (int i = 0; integer > i; i++) {
+        for (int i = 0; 4 > i; i++) {
             String out = strArr.get(r.nextInt(26));
             aa_list.add(out);
         }

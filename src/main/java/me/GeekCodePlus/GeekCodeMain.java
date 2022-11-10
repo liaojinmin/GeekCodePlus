@@ -3,14 +3,12 @@ package me.GeekCodePlus;
 import me.GeekCodePlus.Command.CommandCore;
 import me.GeekCodePlus.Configure.LoadConfig;
 import me.GeekCodePlus.Configure.LoadLang;
-import me.GeekCodePlus.Libraries.LibrariesClassLoader;
-import me.GeekCodePlus.Libraries.LibrariesManage;
 import me.GeekCodePlus.Libraries.data.DataBaseManage;
 import me.GeekCodePlus.Metrics.Metrics;
 import me.GeekCodePlus.Module.ActionCode.ActivationActionManage;
 import me.GeekCodePlus.Module.ActionCode.InviteActionManage;
-import me.GeekCodePlus.Module.ModuleManage;
 import me.GeekCodePlus.Module.ActionCode.ShareActionManage;
+import me.GeekCodePlus.Module.ModuleManage;
 import me.GeekCodePlus.events.InviteCode;
 import me.GeekCodePlus.utils.PlaceholderAPI.papi_Hook;
 import me.GeekCodePlus.utils.RandomCode;
@@ -26,7 +24,6 @@ public class GeekCodeMain extends JavaPlugin {
 
     public static Economy econ = null;
     public static GeekCodeMain instance;
-    public final static LibrariesClassLoader ClassLoader = new LibrariesClassLoader();
     public static final String Version = String.valueOf(3.0);
 
     public static ActivationActionManage activationActionManage;
@@ -60,7 +57,7 @@ public class GeekCodeMain extends JavaPlugin {
 
         LoadConfig.onLoad();
         LoadLang.onLoad();
-        new LibrariesManage();
+        new DataBaseManage();
         new ModuleManage();
         randomCode = new RandomCode();
 
@@ -99,14 +96,10 @@ public class GeekCodeMain extends JavaPlugin {
     }
 
     public static void say(String s) {
-        /*CommandSender sender = Bukkit.getConsoleSender();
-        sender.sendMessage("§8[§3§lGeekCode§b§lPlus§8] "+s.replace("&","§"));*/
-        instance.getLogger().info(ChatColor.translateAlternateColorCodes('&', "§8[§3§lGeekCode§b§lPlus§8] " + s));
+        System.out.println(ChatColor.translateAlternateColorCodes('&', "§8[§3§lGeekCode§b§lPlus§8] " + s));
     }
 
     public static void motd(String s) {
-        /*CommandSender sender = Bukkit.getConsoleSender();
-        sender.sendMessage(s);*/
-        instance.getLogger().info(s);
+        System.out.println(s);
     }
 }

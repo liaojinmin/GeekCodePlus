@@ -149,11 +149,11 @@ public class Invite_DataManage {
     }
 
     public static class InviteOwnerObj {
-        private String OWNER_NAME;
-        private String OWNER_UUID;
-        private String OWNER_CDK;
-        private int OWNER_COUNT;
-        private int OWNER_REWARD;
+        private final String OWNER_NAME;
+        private final String OWNER_UUID;
+        private final String OWNER_CDK;
+        private final int OWNER_COUNT;
+        private final int OWNER_REWARD;
 
         /**
          * 这是邀请码拥有者的缓存数据构造函数
@@ -194,10 +194,10 @@ public class Invite_DataManage {
     }
 
     public static class InviteUserObj {
-        private String USER_NAME;
-        private String USER_UUID;
-        private String USER_CDK;
-        private String USER_IP;
+        private final String USER_NAME;
+        private final String USER_UUID;
+        private final String USER_CDK;
+        private final String USER_IP;
 
         /**
          * 这是邀请码使用者的缓存数据构造函数

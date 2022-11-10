@@ -51,12 +51,12 @@ publishing {
     }
 }
 
-tasks.withType<JavaCompile>() {
+tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
 /*
 无视即可,当时因为(com.zaxxer:HikariCP)需要shadowJar才能加载才写的
  */
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
-    archiveFileName.set("GeekCodePlus-$version.jar");
+    archiveFileName.set("GeekCodePlus-$version.jar")
 }

@@ -140,10 +140,10 @@ public final class Activation_DataManage {
     }
 
     static class ActivationObj {
-        private String CODE;
-        private int LAVE;
-        private String COMMAND;
-        private String PERM;
+        private final String CODE;
+        private final int LAVE;
+        private final String COMMAND;
+        private final String PERM;
 
         /**
          * 设置邀请码数据对象
@@ -176,9 +176,9 @@ public final class Activation_DataManage {
     }
 
     public static class ActivationUserObj {
-        private String NAME;
-        private String CODE;
-        private String COMMAND;
+        private final String NAME;
+        private final String CODE;
+        private final String COMMAND;
 
         /**
          * * 设置邀请码数据对象
