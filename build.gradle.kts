@@ -35,7 +35,6 @@ dependencies {
     compileOnly("me.clip:placeholderapi:2.11.2")
     compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
     //compileOnly("com.destroystokyo.paper:paper-api:1.12.2-R0.1-SNAPSHOT")
-    //compileOnly(fileTree("lib"))
 
 
 }

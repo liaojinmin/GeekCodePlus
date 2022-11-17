@@ -29,11 +29,35 @@ public class CommandCdk {
         }
 
         if (args.length >= 2 && args[0].equalsIgnoreCase("cdk")) {
-            boolean ACode = args[1].contains("GeekA");
+            /*boolean ACode = args[1].contains("GeekA");
             boolean ICode = args[1].contains("GeekI");
-            boolean SCode = args[1].contains("GeekS");
-
-            if (ACode && ConfigManage.USER_ACTIVATION_CODE) {
+            boolean SCode = args[1].contains("GeekS");*/
+            String s = args[1];
+            switch (s) {
+                case "GeekA":
+                    if (ConfigManage.USER_ACTIVATION_CODE) {
+                        GeekCodeMain.activationActionManage.UserCode(player, player_name, s);
+                    }
+                    break;
+                case "GeekI":
+                    if (ConfigManage.USER_INVITE_CODE) {
+                        GeekCodeMain.activationActionManage.UserCode(player, player_name, s);
+                    }
+                    break;
+                case "GeekS":
+                    if (ConfigManage.USER_SHARE_CODE) {
+                        Share_DataManage.ShareObj data = Share_DataManage.getCodeMap.get(s);
+                        if (data.getUSE_STATUS().equalsIgnoreCase("已使用")) {
+                            for (String out : LangManage.CODE_GET) {
+                                player.sendMessage(out);
+                            }
+                        } else {
+                            Share_GuiClick.open(player, args[1]);
+                        }
+                        return;
+                    }
+            }
+            /*if (ACode && ConfigManage.USER_ACTIVATION_CODE) {
                 GeekCodeMain.activationActionManage.UserCode(player, player_name, args[1]);
                 return;
             }
@@ -52,12 +76,11 @@ public class CommandCdk {
                 } else {
                     Share_GuiClick.open(player, args[1]);
                 }
-                return;
-            }
-            for (String list_to_string : LangManage.USER_CDK_HELP) {
-                sender.sendMessage(list_to_string);
-            }
+                return;*/
+        }
+        for (String list_to_string : LangManage.USER_CDK_HELP) {
+            sender.sendMessage(list_to_string);
         }
     }
-
 }
+

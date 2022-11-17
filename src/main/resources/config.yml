@@ -33,12 +33,12 @@ Module:
       #CDK拥有者的奖励-可能发放有问题
       #当玩家使用 [ /geeki get ] 时执行的指令
       owner_reward:
-        - 'money give [player_name] 1000'
+        - 'money give %player_name% 1000'
       #CDK使用者的奖励
       #当玩家成功兑换邀请码，执行的指令
       user_reward:
-        - 'money give [player_name] 100'
-        - 'points give [player_name] 100'
+        - 'money give %player_name% 100'
+        - 'points give %player_name% 100'
   #激活码模块
   #设置为 false 禁用模块
   ActivationCode:

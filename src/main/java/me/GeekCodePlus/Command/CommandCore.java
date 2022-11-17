@@ -9,7 +9,8 @@ public class CommandCore implements CommandExecutor {
 
 
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
-        if (args.length == 0 || args[0].equals("help")) {
+        if (args.length == 0) return false;
+        /*if (args.length == 0 || args[0].equals("help")) {
             CommandHelp.execute(sender, command, label, args);
             return true;
         }
@@ -27,7 +28,29 @@ public class CommandCore implements CommandExecutor {
         }
         if (args[0].equalsIgnoreCase("share")) {
             CommandShare.execute(sender, command, label, args);
+        }*/
+
+        switch (args[0].toLowerCase()){
+            case "help":
+                CommandHelp.execute(sender, command, label, args);
+                return true;
+            case "create":
+                CommandCreate.execute(sender, command, label, args);
+                return true;
+            case "reload":
+                CommandReload.execute(sender, command, label, args);
+                return true;
+            case "inv":
+                CommandInvite.execute(sender, command, label, args);
+                return true;
+            case "cdk":
+                CommandCdk.execute(sender, command, label, args);
+                return true;
+            case "share":
+                CommandShare.execute(sender, command, label, args);
+                return true;
+            default:
+                return false;
         }
-        return false;
     }
 }

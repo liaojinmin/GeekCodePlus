@@ -5,6 +5,7 @@ import me.GeekCodePlus.Configure.ConfigManage;
 import me.GeekCodePlus.Configure.LangManage;
 import me.GeekCodePlus.Module.DataManage.Invite_DataManage;
 import me.GeekCodePlus.utils.PlaceholderAPI.papiDataHead;
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -200,25 +201,24 @@ public final class InviteActionManage {
 
     /**
      * 玩家购买（获取） 邀请码
-     * @param p 玩家对象
+     * @param player 玩家对象
      * @param name 玩家名称
      * @param uuid 玩家uuid
      */
-    public void BuyCdk(Player p, String name, String uuid) {
+    public void BuyCdk(Player player, String name, String uuid) {
         if (isNoBuy(name)) {
             TextComponent text = new TextComponent("    §7[§A点击复制§7]");
             text.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, Owner_cdk));
             for(String out : LangManage.ME_CODE)
             {
-                p.sendMessage(out.replace("[cdk]", Owner_cdk));
+                player.sendMessage(out.replace("[cdk]", Owner_cdk));
             }
-            p.spigot().sendMessage(text);
-            p.sendMessage("");
-            p.sendMessage("");
+            player.spigot().sendMessage(text);
+            player.sendMessage("\n");
             return;
         }
         int in = (Invite_DataManage.getOwnerMap.size()+1);
-        Invite_DataManage.setOwnerNewData(p, name, uuid, in);
+        Invite_DataManage.setOwnerNewData(player, name, uuid, in);
     }
 
 
@@ -252,8 +252,7 @@ public final class InviteActionManage {
      *
      */
     private void GiveReward(Player player, String Owner_name) {
-        String uuid = String.valueOf(player.getPlayer().getUniqueId());
-        String u = Joiner.on(",").join(ConfigManage.OWNER_REWARD).replace("[player_name]",Owner_name).replace("[player_uuid]",uuid);
+        String u = PlaceholderAPI.setPlaceholders(player,Joiner.on(",").join(ConfigManage.OWNER_REWARD));
         String[] Run = u.split(",");
         for (int i = 0; i < REWARD; i++) {
             for (String run : Run) {

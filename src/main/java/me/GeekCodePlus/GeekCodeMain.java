@@ -89,6 +89,7 @@ public class GeekCodeMain extends JavaPlugin {
         }
         RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
         if (rsp == null) {
+            say("&c&l检查是否装有经济插件");
             return false;
         }
         econ = rsp.getProvider();
